@@ -1,0 +1,61 @@
+package pl.bnb.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+
+private Integer idUser;
+private String name;
+private String lastName;
+private String phoneNumber;
+private String bookingNumber;
+
+    public User() {
+    }
+
+    public Integer getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getBookingNumber() {
+        return bookingNumber;
+    }
+
+    public void setBookingNumber(String bookingNumber) {
+        this.bookingNumber = bookingNumber;
+    }
+}
