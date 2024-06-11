@@ -18,17 +18,19 @@ public class DrinkService {
         this.drinkRepository = drinkRepository;
     }
 
-    public List<Drink> getAllDrink(){
-        return  drinkRepository.findAll();
+    public List<Drink> getAllDrink() {
+        return drinkRepository.findAll();
     }
-    public Optional<Drink> getDrinkById(Integer idDrink){
-        return  drinkRepository.findById(idDrink);
+
+    public Optional<Drink> getDrinkById(Integer idDrink) {
+        return drinkRepository.findById(idDrink);
     }
-    public Drink addDrink(Drink drink){
+
+    public Drink addDrink(Drink drink) {
         return drinkRepository.save(drink);
     }
 
-    public void deleteDrink(Integer idDrink){
+    public void deleteDrink(Integer idDrink) {
         drinkRepository.deleteById(idDrink);
     }
 }

@@ -12,25 +12,29 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
-@Autowired
+
+    @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public List<User> getAllUser(){
-    return userRepository.findAll();
-    }
-    public Optional<User> findByID(Integer idUser){
-    return userRepository.findById(idUser);
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 
-    public User createUser(User user){
-    return userRepository.save(user);
+    public Optional<User> findByID(Integer idUser) {
+        return userRepository.findById(idUser);
     }
-    public User updateUser(Integer id){
-    return userRepository.getReferenceById(id);
+
+    public User createUser(User user) {
+        return userRepository.save(user);
     }
-    public void deleteUser(Integer idUser){
+
+    public User updateUser(Integer id) {
+        return userRepository.getReferenceById(id);
+    }
+
+    public void deleteUser(Integer idUser) {
 
         userRepository.deleteById(idUser);
     }

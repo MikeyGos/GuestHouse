@@ -27,7 +27,7 @@ public class WebController {
         return "products";
     }
 
-    @GetMapping("login")
+    @GetMapping("login.html")
     public String login(){
         return "login";
     }

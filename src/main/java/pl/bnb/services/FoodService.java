@@ -17,19 +17,19 @@ public class FoodService {
         this.foodRepository = foodRepository;
     }
 
-    public List<Food> getAllFood(){
+    public List<Food> getAllFood() {
         return foodRepository.findAll();
     }
 
-    public Optional<Food> getFoodById(Integer idFood){
-       return foodRepository.findById(idFood);
+    public Optional<Food> getFoodById(Integer idFood) {
+        return foodRepository.findById(idFood);
     }
 
-    public Food addFood(Food food){
+    public Food addFood(Food food) {
         return foodRepository.save(food);
     }
 
-    public void delete (Integer idFood){
+    public void delete(Integer idFood) {
         foodRepository.deleteById(idFood);
     }
 }
