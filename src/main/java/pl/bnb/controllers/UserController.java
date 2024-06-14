@@ -28,14 +28,14 @@ public class UserController {
         return ResponseEntity.ok(allUser);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<User> findByID(@PathVariable("id") Integer idUser) {
+    @GetMapping("/{idUser}")
+    public ResponseEntity<User> findByID(@PathVariable("idUser") Integer idUser) {
         Optional<User> byID = userService.findByID(idUser);
         return byID.stream()
                 .map(ResponseEntity::ok)
                 .findAny().orElseGet(() -> ResponseEntity.notFound().build());
-
     }
+
 
     @PostMapping()
     public ResponseEntity<User> createUser(@RequestBody User user) {
@@ -64,13 +64,14 @@ public class UserController {
     }
     @PatchMapping("/{idUser}")
     public ResponseEntity<User> partialUpdateUser(@PathVariable Integer idUser, @RequestBody User user) {
+
         return userService.findByID(idUser)
                 .map(existingUser -> {
                     if (user.getName() != null) existingUser.setName(user.getName());
                     if (user.getLastName() != null) existingUser.setLastName(user.getLastName());
                     if (user.getPhoneNumber() != null) existingUser.setPhoneNumber(user.getPhoneNumber());
                     if (user.getBookingNumber() != null) existingUser.setBookingNumber(user.getBookingNumber());
-                    return userService.updateUser(idUser);
+                    return userService.updateUser(existingUser);
                 })
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());

@@ -16,8 +16,6 @@ public class Food {
     private BigDecimal price;
     private String size;
 
-    public Food() {
-    }
 
     public Integer getIdFood() {
         return idFood;

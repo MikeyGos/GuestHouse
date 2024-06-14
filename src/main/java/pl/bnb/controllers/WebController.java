@@ -11,7 +11,6 @@ public class WebController {
         return "index";
     }
 
-
     @GetMapping("about.html")
     public String about(){
         return "about";
@@ -27,8 +26,28 @@ public class WebController {
         return "products";
     }
 
+    @GetMapping("store.html")
+    public String store() {
+        return "store";
+    }
     @GetMapping("login.html")
     public String login(){
         return "login";
     }
+
+    @GetMapping("food.html")
+    public String food() {
+        return "food";
+    }
+
+    @GetMapping("drinks.html")
+    public String drinks() {
+        return "drinks";
+    }
+
+    @GetMapping("register.html")
+    public String register() {
+        return "register";
+    }
 }
+

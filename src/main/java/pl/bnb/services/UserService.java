@@ -3,6 +3,7 @@ package pl.bnb.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.bnb.entity.User;
+import pl.bnb.repositories.LoginRepository;
 import pl.bnb.repositories.UserRepository;
 
 import java.util.List;
@@ -12,10 +13,14 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final LoginRepository loginRepository;
+
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, LoginRepository loginRepository) {
+        this.loginRepository = loginRepository;
         this.userRepository = userRepository;
+
     }
 
     public List<User> getAllUser() {
@@ -26,12 +31,16 @@ public class UserService {
         return userRepository.findById(idUser);
     }
 
+    public Optional<User> findByBookingNumber(String bookingNumber) {
+        return loginRepository.findByBookingNumber(bookingNumber);
+    }
+
     public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    public User updateUser(Integer id) {
-        return userRepository.getReferenceById(id);
+    public User updateUser(User user) {
+        return userRepository.save(user);
     }
 
     public void deleteUser(Integer idUser) {

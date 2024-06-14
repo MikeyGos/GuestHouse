@@ -17,15 +17,8 @@ public class Drink {
     private BigDecimal price;
     private Double capacity;
 
-    public Drink() {
-    }
-
     public Integer getIdDrink() {
         return idDrink;
-    }
-
-    public void setIdDrink(Integer idDrink) {
-        this.idDrink = idDrink;
     }
 
     public String getName() {

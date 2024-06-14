@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895">
-    <link rel="stylesheet" href="/assets/css/styles.min.css?h=6b721eba24b5256b193ac55d9b2dc42e">
+    <link href="/assets/css/styles.min.css?h=cebe02efb46dba79ae9dbdae2a9ba08e" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+          rel="stylesheet">
 </head>
-<body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('/assets/img/bg.jpg?h=1a9398b8c353a8cdf63d59f5136160b1');">
+<body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('/assets/img/bg.jpg?h=309ac301e059090adb26b54519389d83');">
 <h1 class="text-center text-white d-none d-lg-block site-heading"><span class="text-primary site-heading-upper mb-3">Welcome to</span><span
-        class="site-heading-lower">Aisling Guest house</span></h1>
+        class="site-heading-lower">Aisling Guest house</span></h1><span></span>
 <nav class="navbar navbar-expand-lg bg-dark py-lg-4 navbar-dark" id="mainNav">
     <div class="container"><a class="navbar-brand text-uppercase d-lg-none" href="#">Brand</a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span
@@ -17,49 +19,103 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about.html">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="/reservation.html"><span
-                        style="background-color: transparent;">reservation&nbsp;</span></a></li>
+                <li class="nav-item">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="/reservation.html"><span
+                                style="background-color: transparent;">reservation&nbsp;</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/store.html">Store</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 <section class="page-section clearfix">
     <div class="container">
-        <div class="intro"><img class="img-fluid intro-img mb-3 mb-lg-0 rounded"
-                                src="/assets/img/intro.jpg?h=34b94d3755d601e09b24c5a6a3798d64">
-            <div class="text-center intro-text p-5 rounded bg-faded"><h2 class="section-heading mb-4"><span
-                    class="section-heading-upper">Fresh Coffee</span><span
-                    class="section-heading-lower">Worth Drinking</span></h2>
-                <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked
-                    ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning
-                    routine - we guarantee it!</p>
-                <div class="mx-auto intro-button"><a class="btn btn-primary d-inline-block mx-auto btn-xl" role="button"
-                                                     href="#">Visit Us Today!</a></div>
+        <div class="intro">
+            <div class="carousel slide carousel-fade" data-bs-interval="3000" data-bs-ride="carousel" id="carousel-1">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img alt="Slide Image"
+                                                           class="w-100 d-block"
+                                                           loading="eager"
+                                                           src="/assets/img/breakFastRoomIntro.jpg?h=869b1c0117c24ba64fa6eaf665965d77">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/dinnerTime.jpg?h=fbd3852848085e46ea572fcd066554a2">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/RestRoom.jpg?h=deba5f3a1b593d771e772ba4e99786d0">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/1%20bnb.jpg?h=b2b383d72b07231214b25d7e8f399413">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/2%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/3%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/4%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/5%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/6%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/8%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                    <div class="carousel-item"><img alt="Slide Image"
+                                                    class="w-100 d-block"
+                                                    src="/assets/img/9%20bnb.jpg?h=3b01d8b225e7c85158ceb2a61bf7ecf1">
+                    </div>
+                </div>
+                <div><!-- Start: Previous --><a class="carousel-control-prev" data-bs-slide="prev" href="#carousel-1"
+                                                role="button"><span
+                        class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a>
+                    <!-- End: Previous --><!-- Start: Next --><a class="carousel-control-next" data-bs-slide="next"
+                                                                 href="#carousel-1" role="button"><span
+                            class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a>
+                    <!-- End: Next --></div>
+                <div class="carousel-indicators">
+                    <button class="active" data-bs-slide-to="0" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="1" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="2" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="3" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="4" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="5" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="6" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="7" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="8" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="9" data-bs-target="#carousel-1" type="button"></button>
+                    <button data-bs-slide-to="10" data-bs-target="#carousel-1" type="button"></button>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <section class="page-section cta">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-9 mx-auto">
-                <div class="text-center cta-inner rounded"><h2 class="section-heading mb-4"><span
-                        class="section-heading-upper">Our Promise</span><span
-                        class="section-heading-lower">To You</span></h2>
-                    <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you
-                        with friendly service, a welcoming atmosphere, and above all else, excellent products made with
-                        the highest quality ingredients. If you are not satisfied, please let us know and we will do
-                        whatever we can to make things right!</p></div>
-            </div>
-        </div>
-    </div>
+    <div class="container"><label class="form-label"></label></div>
 </section>
 <footer class="text-center footer text-faded py-5">
-    <div class="container"><p class="m-0 small">Copyright&nbsp;©&nbsp;Brand 2024</p></div>
+    <div class="container"><p class="m-0 small">Project created by Michał Pielewski</p></div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/script.min.js?h=2b73f98f110c7c604b36df54dc174798"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/js/script.min.js?h=2b753d36679df5e80412b4467a8c2c87"></script>
 </body>
 </html>

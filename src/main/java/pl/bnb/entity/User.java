@@ -12,19 +12,22 @@ public class User {
 
 private Integer idUser;
 private String name;
+    private String password;
 private String lastName;
 private String phoneNumber;
 private String bookingNumber;
 
-    public User() {
-    }
 
     public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
