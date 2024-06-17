@@ -25,6 +25,9 @@ public class FoodService {
         return foodRepository.findById(idFood);
     }
 
+    public Optional<Food> getFoodByName(String name) {
+        return foodRepository.findByName(name);
+    }
     public Food addFood(Food food) {
         return foodRepository.save(food);
     }
@@ -32,6 +35,7 @@ public class FoodService {
     public void delete(Integer idFood) {
         foodRepository.deleteById(idFood);
     }
+
 }
 
 

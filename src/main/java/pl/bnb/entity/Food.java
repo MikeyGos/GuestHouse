@@ -21,10 +21,6 @@ public class Food {
         return idFood;
     }
 
-    public void setIdFood(Integer idFood) {
-        this.idFood = idFood;
-    }
-
     public String getName() {
         return name;
     }

@@ -29,13 +29,21 @@ public class FoodController {
     }
 
     @GetMapping("/{idFood}")
-    public ResponseEntity<Food> getFoodById(@PathVariable(value = "idFood") Integer idFood) {
+    public ResponseEntity<Food> getFoodById(@PathVariable Integer idFood) {
         Optional<Food> foodById = foodService.getFoodById(idFood);
-        return foodById.
-                map(ResponseEntity::ok)
+        return foodById
+                .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
 
     }
+
+//    @GetMapping("/name/{name}")
+//    public ResponseEntity<Food> getFoodByName(@PathVariable(value = "name") String name) {
+//        Optional<Food> foodByName = foodService.getFoodByName(name);
+//        return foodByName
+//                .map(ResponseEntity::ok)
+//                .orElseGet(() -> ResponseEntity.notFound().build());
+//    }
 
     @PostMapping()
     public ResponseEntity<Food> addFood(@RequestBody Food food) {

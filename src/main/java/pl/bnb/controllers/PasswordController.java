@@ -27,6 +27,9 @@ public class PasswordController {
 
     @PostMapping("/checkPassword")
     public String bothSamePassword(@RequestParam String password, @RequestParam String samePassword, Model model, HttpSession httpSession) {
+        System.out.println(password);
+        System.out.println(samePassword);
+
         boolean checkedPassword = passwordService.checkPassword(password, samePassword);
         if (checkedPassword) {
             httpSession.setAttribute("password", password);
@@ -34,7 +37,7 @@ public class PasswordController {
 
             if (changed) {
                 model.addAttribute("message", "Password update correctly!");
-                return "login";
+                return "redirect:/login.html";      //needed forcing a page change
             }
         }
         model.addAttribute("message", "Booking number or password is invalid!");

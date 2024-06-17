@@ -26,13 +26,16 @@ public class LoginController {
             if (isLogged) {
                 model.addAttribute("message", "Sucessfully logged in!");
                 return "index";
+            } else {
+                model.addAttribute("message", "Booking number or password is invalid!");
+                return "login";
             }
-            return "login";
         }
 
         boolean validateUserForRegister = loginService.validateUserToRegister(bookingNumber);
         if (validateUserForRegister) {
             httpSession.setAttribute("bookingNumber", bookingNumber);
+            model.addAttribute("message", "Your reservation number is correct, set a password for your account.");
             return "register";
         } else {
             model.addAttribute("message", "Booking number or password is invalid!");
