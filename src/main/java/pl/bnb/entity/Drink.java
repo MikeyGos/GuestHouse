@@ -16,6 +16,7 @@ public class Drink {
     private String name;
     private BigDecimal price;
     private Double capacity;
+    private int qtyDrink;
 
     public Integer getIdDrink() {
         return idDrink;
@@ -43,5 +44,13 @@ public class Drink {
 
     public void setCapacity(Double capacity) {
         this.capacity = capacity;
+    }
+
+    public int getQtyDrink() {
+        return qtyDrink;
+    }
+
+    public void setQtyDrink(int qtyDrink) {
+        this.qtyDrink = qtyDrink;
     }
 }

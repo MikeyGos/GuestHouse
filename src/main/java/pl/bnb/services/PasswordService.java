@@ -6,13 +6,7 @@ import pl.bnb.repositories.LoginRepository;
 
 @Service
 public class PasswordService {
-    private final LoginRepository loginRepository;
     private String message = "";
-
-    @Autowired
-    public PasswordService(LoginRepository loginRepository) {
-        this.loginRepository = loginRepository;
-    }
 
     public String getMessage() {
         return message;

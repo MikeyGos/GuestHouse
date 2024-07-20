@@ -30,6 +30,7 @@ public class WebController {
     public String store() {
         return "store";
     }
+
     @GetMapping("login.html")
     public String login(){
         return "login";
@@ -48,6 +49,15 @@ public class WebController {
     @GetMapping("register.html")
     public String register() {
         return "register";
+    }
+
+    @GetMapping("order.html")
+    public String order() {
+        return "order";
+    }
+    @GetMapping("basket.html")
+    public String userOrder() {
+        return "basket";
     }
 }
 

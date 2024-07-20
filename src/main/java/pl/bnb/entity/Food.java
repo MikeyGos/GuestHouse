@@ -15,6 +15,7 @@ public class Food {
     private String name;
     private BigDecimal price;
     private String size;
+    private int qtyFood;
 
 
     public Integer getIdFood() {
@@ -43,5 +44,13 @@ public class Food {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public int getQtyFood() {
+        return qtyFood;
+    }
+
+    public void setQtyFood(int qtyFood) {
+        this.qtyFood = qtyFood;
     }
 }

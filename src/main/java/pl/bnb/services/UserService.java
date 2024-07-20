@@ -1,6 +1,7 @@
 package pl.bnb.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.bnb.entity.User;
 import pl.bnb.repositories.LoginRepository;
@@ -14,13 +15,15 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final LoginRepository loginRepository;
+    private final PasswordEncoder passwordEncoder;
+
 
 
     @Autowired
-    public UserService(UserRepository userRepository, LoginRepository loginRepository) {
+    public UserService(UserRepository userRepository, LoginRepository loginRepository, PasswordEncoder passwordEncoder) {
         this.loginRepository = loginRepository;
         this.userRepository = userRepository;
-
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<User> getAllUser() {
@@ -36,10 +39,16 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        return userRepository.save(user);
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            return userRepository.save(user);
+        } else {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            return userRepository.save(user);
+        }
     }
 
     public User updateUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 

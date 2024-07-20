@@ -26,6 +26,10 @@ public class DrinkService {
         return drinkRepository.findById(idDrink);
     }
 
+    public Optional<Drink> getDrinkByName(String name) {
+        return drinkRepository.findByName(name);
+    }
+
     public Drink addDrink(Drink drink) {
         return drinkRepository.save(drink);
     }
@@ -33,4 +37,5 @@ public class DrinkService {
     public void deleteDrink(Integer idDrink) {
         drinkRepository.deleteById(idDrink);
     }
+
 }

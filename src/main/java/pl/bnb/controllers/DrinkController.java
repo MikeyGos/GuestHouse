@@ -9,6 +9,7 @@ import pl.bnb.services.DrinkService;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -28,10 +29,15 @@ public class DrinkController {
         return ResponseEntity.ok(allDrink);
     }
 
-    @GetMapping("/{idDrink}")
+    @GetMapping("/idDrink/{idDrink}")
     public ResponseEntity<Optional<Drink>> getDrinkByID(@PathVariable("idDrink") Integer idDrink) {
         Optional<Drink> drinkById = drinkService.getDrinkById(idDrink);
         return ResponseEntity.ok(drinkById);
+    }
+    @GetMapping("/nameDrink/{name}")
+    public ResponseEntity<Optional<Drink>> getDrinkByName(@PathVariable("name")String name){
+        Optional<Drink> drinkByName = drinkService.getDrinkByName(name);
+        return ResponseEntity.ok(drinkByName);
     }
 
     @PostMapping()

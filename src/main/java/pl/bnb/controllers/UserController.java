@@ -28,12 +28,19 @@ public class UserController {
         return ResponseEntity.ok(allUser);
     }
 
-    @GetMapping("/{idUser}")
+    @GetMapping("/iduser/{idUser}")
     public ResponseEntity<User> findByID(@PathVariable("idUser") Integer idUser) {
         Optional<User> byID = userService.findByID(idUser);
         return byID.stream()
                 .map(ResponseEntity::ok)
                 .findAny().orElseGet(() -> ResponseEntity.notFound().build());
+    }
+    @GetMapping("/bookingNumber/{bookingNumber}")
+    public ResponseEntity<User> findByBN(@PathVariable("bookingNumber")String bookingNumber){
+        Optional<User> byBN = userService.findByBookingNumber(bookingNumber);
+        return byBN.stream()
+                .map(ResponseEntity::ok)
+                .findAny().orElseGet(()->ResponseEntity.notFound().build());
     }
 
 

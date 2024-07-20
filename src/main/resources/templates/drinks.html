@@ -2,19 +2,27 @@
 <html data-bs-theme="light" lang="en">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Products - Brand</title>
-    <link href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895" rel="stylesheet">
-    <link href="/assets/css/styles.min.css?h=cebe02efb46dba79ae9dbdae2a9ba08e" rel="stylesheet">
-    <link crossorigin="anonymous" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
-          rel="stylesheet">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=b547692cfcf7aa3c2cb652c979292472">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+          crossorigin="anonymous">
 </head>
 <body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('/assets/img/bg.jpg?h=309ac301e059090adb26b54519389d83');">
+<nav class="navbar navbar-expand-md sticky-top navbar-light" style="background: transparent;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" data-bs-toggle="collapse"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div></div>
+        <a class="btn btn-primary btn-lg" role="button" href="/login.html">Log in</a></div>
+</nav>
 <h1 class="text-center text-white d-none d-lg-block site-heading"><span class="text-primary site-heading-upper mb-3">Welcome to</span><span
         class="site-heading-lower">Aisling guest house</span></h1>
 <nav class="navbar navbar-expand-lg bg-dark py-lg-4 navbar-dark" id="mainNav">
     <div class="container"><a class="navbar-brand text-uppercase d-lg-none" href="#">Brand</a>
-        <button class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse"><span
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span
                 class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
@@ -28,6 +36,7 @@
                         <li class="nav-item"><a class="nav-link" href="/store.html">Store</a></li>
                     </ul>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="/order.html">order</a></li>
             </ul>
         </div>
     </div>
@@ -40,12 +49,12 @@
                     <nav class="navbar navbar-expand-md bg-body py-3">
                         <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span
                                 class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg
-                                fill="none" height="1em" viewBox="0 0 24 24" width="1em"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                fill="none">
   <path d="M6.34315 19.5208C3.21895 16.3966 3.21895 11.3312 6.34315 8.20705L12 2.5502L17.6569 8.20705C20.781 11.3312 20.781 16.3966 17.6569 19.5208C14.5327 22.645 9.46734 22.645 6.34315 19.5208Z"
         stroke="currentColor" stroke-width="2"></path>
 </svg></span><span>Hot and cold drinks available</span></a>
-                            <button class="navbar-toggler" data-bs-target="#navcol-1" data-bs-toggle="collapse"><span
+                            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
                                     class="visually-hidden">Toggle navigation</span><span
                                     class="navbar-toggler-icon"></span></button>
                             <div class="collapse navbar-collapse" id="navcol-1">
@@ -135,7 +144,8 @@
 </section>
 <footer class="text-center footer text-faded py-5">
     <div class="container"><p class="m-0 small">Project created by Michał Pielewski</p></div>
-</footer>
+</footer><!-- Start: Login Signup in Modal -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
