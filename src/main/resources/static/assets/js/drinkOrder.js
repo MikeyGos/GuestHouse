@@ -1,6 +1,6 @@
 // Fetch sorted drinks and save to localStorage
 async function fetchSortedDrinks(searchInput = '') {
-    let url = '/sortedDrink';
+    let url = '/sortedDrinks';
     if (searchInput) {
         url += `?name=${encodeURIComponent(searchInput)}`;
     }
@@ -21,8 +21,8 @@ function displayDrinks(drinks) {
 
     drinks.forEach(drink => {
         const row = document.createElement('tr');
+        row.setAttribute('data-id', drink.idDrink); // Set idDrink as a data attribute
         row.innerHTML = `
-            <td>${drink.idDrink}</td>
             <td>${drink.name}</td>
             <td>${drink.price}</td>
             <td>${drink.capacity}</td>
@@ -57,10 +57,10 @@ function submitQuantities() {
         const quantity = parseInt(span.textContent);
         if (quantity > 0) {
             const drinkRow = span.closest('tr');
-            const drinkName = drinkRow.querySelector('td:nth-child(2)').textContent;
-            const price = parseFloat(drinkRow.querySelector('td:nth-child(3)').textContent);
+            const drinkName = drinkRow.querySelector('td:nth-child(1)').textContent; // First column is name now
+            const price = parseFloat(drinkRow.querySelector('td:nth-child(2)').textContent); // Second column is price now
             const totalPrice = (price * quantity).toFixed(2);
-            basket.push({ idDrink, nameBasketProduct :drinkName, qtyBasketProduct :quantity, totalPrice }); // nameBasketProduct : drinkName  -- changes name for oder js. for getter on java
+            basket.push({ idDrink, nameBasketProduct: drinkName, qtyBasketProduct: quantity, totalPrice });
         }
     });
 
@@ -78,7 +78,9 @@ function submitQuantities() {
             console.log(responseText);
             window.location.href = '/basket.html'; // Redirect to the basket page
         })
-        .catch(error => console.error('Error submitting quantities:', error));
+        .catch(error => {
+            console.error('Error submitting quantities:', error);
+        });
 }
 
 // Initialize by fetching the drinks

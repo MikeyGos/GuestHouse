@@ -17,7 +17,7 @@ public final DrinkService drinkService;
     }
 
 
-    @GetMapping("/sortedDrink")
+    @GetMapping("/sortedDrinks")
     public List<Drink> sortedDrink() {
         return drinkService.getAllDrink();
 }

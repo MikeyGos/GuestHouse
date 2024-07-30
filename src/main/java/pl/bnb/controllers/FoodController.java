@@ -37,14 +37,6 @@ public class FoodController {
 
     }
 
-//    @GetMapping("/name/{name}")
-//    public ResponseEntity<Food> getFoodByName(@PathVariable(value = "name") String name) {
-//        Optional<Food> foodByName = foodService.getFoodByName(name);
-//        return foodByName
-//                .map(ResponseEntity::ok)
-//                .orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-
     @PostMapping()
     public ResponseEntity<Food> addFood(@RequestBody Food food) {
         Food addedFood = foodService.addFood(food);

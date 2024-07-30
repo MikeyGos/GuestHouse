@@ -58,4 +58,7 @@ public class UserService {
     }
 
 
+    public User paymentUser(User user) {
+        return userRepository.save(user);
+    }
 }

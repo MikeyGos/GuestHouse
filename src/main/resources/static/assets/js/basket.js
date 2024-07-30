@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     basket.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${item.idDrink}</td>
             <td>${item.nameBasketProduct}</td>
             <td>${item.qtyBasketProduct}</td>
             <td>${item.totalPrice}</td>

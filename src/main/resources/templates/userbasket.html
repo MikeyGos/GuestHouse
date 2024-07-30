@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>About us - Brand</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=183e7dee74c956e4154c1796ab999824">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/order.css">
+</head>
+<body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('/assets/img/bg.jpg?h=309ac301e059090adb26b54519389d83');">
+<a href="/userbasket.html" class="cart-icon">
+    <img src="/assets/img/basket.jpg" alt="Cart">
+</a>
+<h1 class="text-center text-white d-none d-lg-block site-heading"><span class="site-heading-lower">AISLING GUEST HOUSE</span>
+</h1>
+<nav class="navbar navbar-expand-lg bg-dark py-lg-4 navbar-dark" id="mainNav">
+    <div class="container"><a class="navbar-brand text-uppercase d-lg-none" href="#">Brand</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li>
+                <li class="nav-item">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="/reservation.html"><span
+                                style="background-color: transparent;">reservation&nbsp;</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/store.html">Store</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/order.html">order</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<section class="page-section about-heading" style="background: transparent;">
+    <div class="container">
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <div class="bg-faded rounded p-5"><h2 class="section-heading mb-4"></h2>
+                        <p class="mb-0"></p>
+                        <div class="table-responsive">
+                            <h1>Your Basket</h1>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Total price</th>
+                                    <th>Remove product</th>
+                                </tr>
+                                </thead>
+                                <tbody id="basketTableBody">
+                                </tbody>
+                            </table>
+                            <button onclick="window.location.href = 'payment.html';" class="btn btn-primary mt-3">Pay</button>
+                            <script src="/assets/js/userBasket.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="text-center footer text-faded py-5">
+    <div class="container"><p class="m-0 small">Project created by Michał Pielewski</p></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/js/script.min.js?h=2b753d36679df5e80412b4467a8c2c87"></script>
+
+</body>
+</html>

@@ -59,5 +59,12 @@ public class WebController {
     public String userOrder() {
         return "basket";
     }
+    @GetMapping("snacks.html")
+    public String snacks() {return "snacks";}
+
+    @GetMapping("userbasket.html")
+    public String userBasket(){return "userbasket";}
+    @GetMapping("payment.html")
+    public String payment(){return "payment";}
 }
 

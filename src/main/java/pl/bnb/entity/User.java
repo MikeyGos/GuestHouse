@@ -17,6 +17,7 @@ public class User {
     private String lastName;
     private String phoneNumber;
     private String bookingNumber;
+    private Boolean payOnline;
 
 
     public Integer getIdUser() {
@@ -63,5 +64,11 @@ public class User {
         this.bookingNumber = bookingNumber;
     }
 
+    public Boolean getPayOnline() {
+        return payOnline;
+    }
 
+    public void setPayOnline(Boolean payOnline) {
+        this.payOnline = payOnline;
+    }
 }
