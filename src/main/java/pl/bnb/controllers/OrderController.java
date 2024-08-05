@@ -83,14 +83,25 @@ public class OrderController {
         return ResponseEntity.ok(savedOrders);
     }
 
+    @DeleteMapping("/orderProduct")
+    public ResponseEntity<Void> deleteProduct(HttpSession session, Model model,
+                                              @RequestParam(required = false) Integer idDrink,
+                                              @RequestParam(required = false) Integer idFood) {
+        String bookingNumber = basketBN(session, model);
+        if (bookingNumber == null || bookingNumber.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        if (idDrink == null && idFood == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
 
-//    @PostMapping("/paymentMethod")
-//    public String paymentMethod(@RequestBody user)
-//    @DeleteMapping("/orderProduct")
-//
-//    public ResponseEntity<Void> deleteProduct(String bookingNumber, Integer idFood, Integer idDrink){
-//        boolean isRemoved = orderService.findByBookingNumberAndIdDrinkAndIdFood(bookingNumber,idFood,idDrink);
-//    }
 
-
+        Optional<OrderProduct> existingOrder = orderService.findByBookingNumberAndIdDrinkAndIdFood(bookingNumber, idDrink, idFood);
+        if (existingOrder.isPresent()) {
+            orderService.deleteOrder(existingOrder.get());
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 }

@@ -1,0 +1,30 @@
+.carousel-item img {
+    width: 100%; /* Wypełnia szerokość kontenera */
+    height: 900px; /* Ustawia stałą wysokość */
+     /* Dopasowuje obraz do kontenera, przycinając go w razie potrzeby */
+}
+.carousel-inner {
+    height: 900px; /* Wysokość kontenera karuzeli */
+    overflow: hidden; /* Ukrywa nadmiar obrazu */
+}
+
+.carousel-item img {
+    width: 100%; /* Wypełnia szerokość kontenera */
+    height: 100%; /* Wypełnia wysokość kontenera */
+    object-fit: cover; /* Przycina obraz, aby dopasować do kontenera */
+}
+.carousel-item {
+    width: 100%; /* Wypełnia szerokość kontenera */
+    height: 900px; /* Ustawia stałą wysokość kontenera */
+    display: flex;
+    align-items: center; /* Wyrównuje obraz w pionie */
+    justify-content: center; /* Wyrównuje obraz w poziomie */
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover; /* Utrzymuje proporcje obrazu i przycina go, aby wypełnił kontener */
+}

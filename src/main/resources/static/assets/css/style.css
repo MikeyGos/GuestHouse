@@ -1,0 +1,25 @@
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+.calendar th, .calendar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.calendar th {
+    background-color: #f4f4f4;
+}
+.calendar .selected {
+    background-color: #ddd;
+}
+.container {
+    width: 50%;
+    margin: auto;
+}
+.form-group {
+    margin-top: 20px;
+}
+.form-group label {
+    margin-right: 10px;
+}

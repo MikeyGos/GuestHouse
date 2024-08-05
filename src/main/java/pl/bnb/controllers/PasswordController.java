@@ -27,8 +27,6 @@ public class PasswordController {
 
     @PostMapping("/checkPassword")
     public String bothSamePassword(@RequestParam String password, @RequestParam String samePassword, Model model, HttpSession httpSession) {
-        System.out.println(password);
-        System.out.println(samePassword);
 
         boolean checkedPassword = passwordService.checkPassword(password, samePassword);
         if (checkedPassword) {

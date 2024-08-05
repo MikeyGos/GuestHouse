@@ -48,7 +48,6 @@ function updateQuantity(idFood, name, price, change) {
     quantityElement.textContent = currentQuantity;
 }
 
-// Submit quantities to server and save to localStorage
 function submitQuantities() {
     const basket = [];
     document.querySelectorAll('span[id^="quantity-"]').forEach(span => {
@@ -75,7 +74,7 @@ function submitQuantities() {
         .then(response => response.json())
         .then(responseText => {
             console.log(responseText);
-            window.location.href = '/basket.html'; // Redirect to the basket page
+            window.location.href = '/basket.html';
         })
         .catch(error => console.error('Error submitting quantities:', error));
 }

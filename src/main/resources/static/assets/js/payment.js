@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 alert('Payment method updated successfully');
-                window.location.href = 'index.html';  // Redirect to index.html
+                window.location.href = 'index.html';
             } else {
                 alert('Failed to update payment method');
             }

@@ -23,7 +23,7 @@ public class LoginService {
         Optional<User> loginNumber = loginRepository.findByBookingNumber(bookingNumber);
         if (loginNumber.isPresent()) {
             User user = loginNumber.get();
-            return passwordEncoder.matches(password, user.getPassword());
+            return passwordEncoder.matches(password, user.getPassword()); //checked hash password protection
         } else {
             return false;
         }

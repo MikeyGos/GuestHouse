@@ -42,7 +42,7 @@ public class UserService {
         if (user.getPassword() == null || user.getPassword().isEmpty()) {
             return userRepository.save(user);
         } else {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setPassword(passwordEncoder.encode(user.getPassword())); // set hash password
             return userRepository.save(user);
         }
     }
@@ -57,8 +57,7 @@ public class UserService {
         userRepository.deleteById(idUser);
     }
 
-
-    public User paymentUser(User user) {
-        return userRepository.save(user);
+    public void paymentUser(User user) {
+        userRepository.save(user);
     }
 }

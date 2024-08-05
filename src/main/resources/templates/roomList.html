@@ -2,15 +2,17 @@
 <html data-bs-theme="light" lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>User Basket</title>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895">
-    <link rel="stylesheet" href="/assets/css/styles.min.css?h=183e7dee74c956e4154c1796ab999824">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/order.css">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>Room Order List</title>
+    <link href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895" rel="stylesheet">
+    <link href="/assets/css/styles.min.css?h=183e7dee74c956e4154c1796ab999824" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+          rel="stylesheet">
+    <link href="/assets/css/order.css" rel="stylesheet">
 </head>
 <body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('/assets/img/bg.jpg?h=309ac301e059090adb26b54519389d83');">
-<h1 class="text-center text-white d-none d-lg-block site-heading"><span class="site-heading-lower">AISLING GUEST HOUSE</span>
+<h1 class="text-center text-white d-none d-lg-block site-heading"><span
+        class="site-heading-lower">AISLING GUEST HOUSE</span>
 </h1>
 <div class="bg-body shadow d-flex flex-column flex-shrink-0 position-fixed top-0 bottom-0" style="width: 4.5rem;">
     <a class="text-center link-body-emphasis d-block p-3 text-decoration-none border-bottom" data-bs-original-title="Icon-only" data-bs-placement="right"
@@ -70,21 +72,23 @@
                     <div class="bg-faded rounded p-5"><h2 class="section-heading mb-4"></h2>
                         <p class="mb-0"></p>
                         <div class="table-responsive">
-                            <h1>Your Basket</h1>
+                            <h1>Your Room List</h1>
                             <table>
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Total price</th>
-                                    <th>Remove product</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Room name</th>
+                                    <th>Remove order</th>
                                 </tr>
                                 </thead>
-                                <tbody id="basketTableBody">
+                                <tbody id="roomTableBody">
                                 </tbody>
                             </table>
-                            <button onclick="window.location.href = 'payment.html';" class="btn btn-primary mt-3">Pay</button>
-                            <script src="/assets/js/userBasket.js"></script>
+                            <button class="btn btn-primary mt-3" onclick="window.location.href = 'partyRoom.html';">
+                                Back
+                            </button>
+                            <script src="/assets/js/orderRoom.js"></script>
                         </div>
                     </div>
                 </div>

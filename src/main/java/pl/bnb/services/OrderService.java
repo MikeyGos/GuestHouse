@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.bnb.entity.OrderProduct;
 import pl.bnb.repositories.OrderRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,18 +32,9 @@ public class OrderService {
     public List<OrderProduct> saveOrders(List<OrderProduct> orderProducts) {
         return orderRepository.saveAll(orderProducts);
     }
-
-    public OrderProduct updateOrder(OrderProduct orderProduct) {
-        return orderRepository.save(orderProduct);
+    public void deleteOrder(OrderProduct orderProduct) {
+        orderRepository.delete(orderProduct);
     }
-//    public boolean deleteProductById(String bookingNumber,Integer idDrink, Integer idFood) {
-//        Optional<OrderProduct> product = orderRepository.findByBookingNumberAndIdDrinkAndIdFood(bookingNumber, idDrink, idFood);
-//        if (product.isPresent()) {
-//            orderRepository.f(bookingNumber,idDrink,idFood);
-//            return true;
-//        }
-//        return false;
-//    }
 }
 
 

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Submit the order using data from localStorage
+
 function submitMyOrder() {
     let data = localStorage.getItem('basket');
     console.log(data);
@@ -32,7 +32,7 @@ function submitMyOrder() {
         .then(response => response.json())
         .then(responseText => {
             console.log(responseText);
-            window.location.href = '/basket.html'; // Redirect to the order confirmation page
+            window.location.href = '/basket.html';
         })
         .catch(error => console.error('Error submitting order:', error));
 }

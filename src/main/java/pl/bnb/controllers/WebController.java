@@ -55,16 +55,25 @@ public class WebController {
     public String order() {
         return "order";
     }
+
     @GetMapping("basket.html")
     public String userOrder() {
         return "basket";
     }
+
     @GetMapping("snacks.html")
     public String snacks() {return "snacks";}
 
     @GetMapping("userbasket.html")
     public String userBasket(){return "userbasket";}
+
     @GetMapping("payment.html")
     public String payment(){return "payment";}
+
+    @GetMapping("partyRoom.html")
+    public String partyRoom(){return "partyRoom";}
+
+    @GetMapping("roomList.html")
+    public String roomList(){return "roomList";}
 }
 

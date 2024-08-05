@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.bnb.services.LoginService;
@@ -25,7 +24,7 @@ public class LoginController {
             boolean isLogged = loginService.validateUser(bookingNumber, password);
             if (isLogged) {
                 httpSession.setAttribute("bookingNumber", bookingNumber);
-                return "redirect:/index.html";
+                return "redirect:/index.html"; // must be forced to index
 
             } else {
                 model.addAttribute("message", "Booking number or password is invalid!");

@@ -1,0 +1,89 @@
+#calendar {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden; /* Ensure no scrollbars are shown */
+}
+/* FullCalendar custom styles */
+.fc {
+    font-family: 'Arial', sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.fc .fc-col-header-cell {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 10px;
+}
+
+.fc .fc-daygrid-day-top {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    height: 40px;
+}
+
+.fc .fc-daygrid-day-number {
+    font-size: 14px;
+    color: #00000b;
+    padding: 5px;
+}
+
+.fc .fc-daygrid-day-frame {
+    border-radius: 0.25rem;
+    height: 100px;
+}
+
+.fc-daygrid-day:hover .tooltip {
+    display: block;
+}
+
+/* Tooltip styles */
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #ff0008;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    top: 100%;
+    left: 0;
+    transform: translateY(5px);
+    white-space: nowrap;
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(238, 255, 0, 0.53);  /* radius around book a room windows */
+}
+
+.modal-header {
+    background-color: #ffa600;
+    color: #fff;
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-body {
+    font-size: 14px;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-body ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.modal-body ul li:hover {
+    background-color: #e9ecef;
+}

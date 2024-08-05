@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>bnb</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=b98aa1fdada8994f0f6406c773f16895">
     <link href="/assets/css/styles.min.css?h=cebe02efb46dba79ae9dbdae2a9ba08e" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
@@ -14,8 +14,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto"><h2>Log in</h2>
-                <p class="w-lg-50">That your first login ? Put your booking number to the label and after that we send
-                    you password to activate account</p></div>
+                <p class="w-lg-50">That your first login ? Put your booking number to the label and try login</p></div>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 col-xl-4">
@@ -30,16 +29,19 @@
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"></path>
                             </svg>
                         </div>
-                        <form class="text-center mt-3" method="post"><input class="form-control" name="bookingNumber"
-                                                                            placeholder="Booking number"
-                                                                            type="text"/>
-                            <div class="mb-3 mt-1"><input class="form-control" name="password" placeholder="Password"
-                                                          type="password"/></div>
+                        <form class="text-center mt-3" method="post"><label>
+                            <input class="form-control" name="bookingNumber"
+                                   placeholder="Booking number"
+                                   type="text"/>
+                        </label>
+                            <div class="mb-3 mt-1"><label>
+                                <input class="form-control" name="password" placeholder="Password"
+                                       type="password"/>
+                            </label></div>
                             <div class="mb-3">
-                                <script src="/assets/js/sesion.js"></script>
-                                <button class="btn btn-primary d-block w-100" onclick="setSessionAndRedirect()">Login</button>
+                                <button class="btn btn-primary d-block w-100">Login</button>
                             </div>
-                            <p class="text-muted">Forgot your password?</p>
+                            <p class="text-muted">Forgot your password?<br> Please contact us at e-mail.</p>
                         </form>
                     </div>
                 </div>
