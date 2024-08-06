@@ -2,7 +2,7 @@ package pl.bnb.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.bnb.entity.PartyRoom;
+import pl.bnb.entity.Room;
 import pl.bnb.repositories.RoomRepository;
 
 import java.time.LocalDate;
@@ -18,20 +18,20 @@ public class RoomService {
     }
 
 
-    public List<PartyRoom> getAllRoomsByBookingNumber(String bookingNumber) {
+    public List<Room> getAllRoomsByBookingNumber(String bookingNumber) {
         return roomRepository.findAllByBookingNumber(bookingNumber);
     }
 
-    public List<PartyRoom> getReservationsByDate(LocalDate date) {
+    public List<Room> getReservationsByDate(LocalDate date) {
         return roomRepository.findByDate(date);
     }
 
-    public PartyRoom saveRoom(PartyRoom partyRoom) {
-        return roomRepository.save(partyRoom);
+    public Room saveRoom(Room room) {
+        return roomRepository.save(room);
     }
 
     public boolean hasExistingReservation(String bookingNumber, LocalDate date, String roomName) {
-        List<PartyRoom> reservations = getReservationsByDate(date);
+        List<Room> reservations = getReservationsByDate(date);
         return reservations.stream()
                 .anyMatch(reservation -> reservation.getBookingNumber().equals(bookingNumber) && reservation.getRoomName().equals(roomName));
     }

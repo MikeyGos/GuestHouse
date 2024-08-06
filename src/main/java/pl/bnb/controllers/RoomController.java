@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.bnb.entity.PartyRoom;
+import pl.bnb.entity.Room;
 import pl.bnb.services.RoomService;
 
 import java.time.LocalDate;
@@ -25,9 +25,9 @@ public class RoomController {
         this.orderController = orderController;
     }
 
-    @GetMapping("/partyRoom/{bookingNumber}")
-    public ResponseEntity<List<PartyRoom>> getAllRooms(@PathVariable String bookingNumber) {
-        List<PartyRoom> allRoomsByBookingNumber = roomService.getAllRoomsByBookingNumber(bookingNumber);
+    @GetMapping("/room/{bookingNumber}")
+    public ResponseEntity<List<Room>> getAllRooms(@PathVariable String bookingNumber) {
+        List<Room> allRoomsByBookingNumber = roomService.getAllRoomsByBookingNumber(bookingNumber);
         return ResponseEntity.ok(allRoomsByBookingNumber);
     }
 
@@ -36,22 +36,22 @@ public class RoomController {
         return orderController.basketBN(session, model);
     }
 
-    @PostMapping("/partyRoom")
-    public ResponseEntity<String> createRoom(@RequestBody PartyRoom partyRoom) {
-        boolean hasExistingReservation = roomService.hasExistingReservation(partyRoom.getBookingNumber(), partyRoom.getDate(), partyRoom.getRoomName());
+    @PostMapping("/room")
+    public ResponseEntity<String> createRoom(@RequestBody Room room) {
+        boolean hasExistingReservation = roomService.hasExistingReservation(room.getBookingNumber(), room.getDate(), room.getRoomName());
         if (hasExistingReservation) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("You already have a reservation for this room on this date.");
         }
-        roomService.saveRoom(partyRoom);
+        roomService.saveRoom(room);
         return ResponseEntity.ok("Room booked successfully.");
     }
 
     @GetMapping("/reservations")
-    public List<PartyRoom> getReservations(@RequestParam String date) {
+    public List<Room> getReservations(@RequestParam String date) {
         return roomService.getReservationsByDate(LocalDate.parse(date));
     }
 
-    @DeleteMapping("/partyRoom/{idParty}")
+    @DeleteMapping("/room/{idParty}")
     public ResponseEntity<String> deleteRoom(@PathVariable Integer idParty) {
         try {
             roomService.deleteRoom(idParty);

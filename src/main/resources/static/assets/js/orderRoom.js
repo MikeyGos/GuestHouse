@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchRooms(bookingNumber) {
         try {
 
-            const response = await fetch(`/bnb/partyRoom/${bookingNumber}`);
+            const response = await fetch(`/bnb/room/${bookingNumber}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function removeRoom(idParty) {
         try {
-            const response = await fetch(`/bnb/partyRoom/${idParty}`, {
+            const response = await fetch(`/bnb/room/${idParty}`, {
                 method: 'DELETE',
             });
             if (response.ok) {

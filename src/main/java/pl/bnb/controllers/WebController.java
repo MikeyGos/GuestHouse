@@ -70,8 +70,8 @@ public class WebController {
     @GetMapping("payment.html")
     public String payment(){return "payment";}
 
-    @GetMapping("partyRoom.html")
-    public String partyRoom(){return "partyRoom";}
+    @GetMapping("room.html")
+    public String partyRoom(){return "room";}
 
     @GetMapping("roomList.html")
     public String roomList(){return "roomList";}

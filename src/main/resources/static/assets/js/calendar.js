@@ -69,19 +69,19 @@ document.addEventListener('DOMContentLoaded', function () {
                                     var roomName = document.getElementById('roomName').value;
                                     var time = document.getElementById('time').value;
 
-                                    var partyRoom = {
+                                    var room = {
                                         bookingNumber: bookingNumber,
                                         date: date,
                                         time: time + ':00',
                                         roomName: roomName
                                     };
 
-                                    fetch('/bnb/partyRoom', {
+                                    fetch('/bnb/room', {
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json'
                                         },
-                                        body: JSON.stringify(partyRoom)
+                                        body: JSON.stringify(room)
                                     }).then(response => {
                                         if (response.status === 409) {
                                             alert('You already have a reservation for this room on this date.');
