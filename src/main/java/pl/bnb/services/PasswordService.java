@@ -34,7 +34,7 @@ public class PasswordService {
             }
         }
         if (upperCaseCounter < 1 || digitCounter < 1) {
-            setMessage("Password has to be at least 2 upper case letter and 2 number");
+            setMessage("Password has to be at least 1 upper case letter or 1 number");
             return false;
         }
         if (!samePassword.equals(password)) {

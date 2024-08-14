@@ -24,6 +24,10 @@ import java.math.BigDecimal;
         return idOrder;
     }
 
+    public void setIdOrder(Integer idOrder) {       //autoincrement in db - needed for test
+        this.idOrder = idOrder;
+    }
+
     public String getBookingNumber() {
         return bookingNumber;
     }

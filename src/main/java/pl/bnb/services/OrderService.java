@@ -17,9 +17,6 @@ public class OrderService {
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
-    public Optional<OrderProduct> findByBN(String bookingNumber) {
-        return orderRepository.findOrderProductByBookingNumber(bookingNumber);
-    }
 
     public Optional<OrderProduct> findByBookingNumberAndIdDrinkAndIdFood(String bookingNumber, Integer idDrink, Integer idFood) {
         return orderRepository.findByBookingNumberAndIdDrinkAndIdFood(bookingNumber, idDrink, idFood);

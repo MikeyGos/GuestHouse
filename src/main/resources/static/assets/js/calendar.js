@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         return selectInfo.start >= new Date();
                     },
                     dateClick: function (info) {
-                        if (info.date < new Date().setHours(0, 0, 0, 0)) {
+                        if (info.date < new Date().setHours(0, 0)) {
                             alert('You cannot book a date in the past.');
                             return;
                         }
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     var room = {
                                         bookingNumber: bookingNumber,
                                         date: date,
-                                        time: time + ':00',
+                                        time: time,
                                         roomName: roomName
                                     };
 

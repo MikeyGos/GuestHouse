@@ -22,6 +22,10 @@ public class Drink {
         return idDrink;
     }
 
+    public void setIdDrink(Integer idDrink) {   // setter only for test - automatically increment in base date
+        this.idDrink = idDrink;
+    }
+
     public String getName() {
         return name;
     }

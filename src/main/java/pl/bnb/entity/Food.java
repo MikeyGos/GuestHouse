@@ -22,6 +22,10 @@ public class Food {
         return idFood;
     }
 
+    public void setIdFood(Integer idFood) {         //setter only for test = autoincrement in db
+        this.idFood = idFood;
+    }
+
     public String getName() {
         return name;
     }
