@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @Entity
 public class Drink {
@@ -56,5 +57,23 @@ public class Drink {
 
     public void setQtyDrink(int qtyDrink) {
         this.qtyDrink = qtyDrink;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Drink drink)) return false;
+
+        return getQtyDrink() == drink.getQtyDrink() && Objects.equals(getIdDrink(), drink.getIdDrink()) && Objects.equals(getName(), drink.getName()) && Objects.equals(getPrice(), drink.getPrice()) && Objects.equals(getCapacity(), drink.getCapacity());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(getIdDrink());
+        result = 31 * result + Objects.hashCode(getName());
+        result = 31 * result + Objects.hashCode(getPrice());
+        result = 31 * result + Objects.hashCode(getCapacity());
+        result = 31 * result + getQtyDrink();
+        return result;
     }
 }

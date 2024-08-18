@@ -14,8 +14,15 @@ public class BasketItem {
         return idFood;
     }
 
+    public void setIdFood(Integer idFood) {
+        this.idFood = idFood;
+    }
+
     public Integer getIdDrink() {
         return idDrink;
+    }
+    public void setIdDrink(Integer idDrink) {
+        this.idDrink = idDrink;
     }
 
     public String getNameBasketProduct() {

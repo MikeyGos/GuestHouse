@@ -94,8 +94,6 @@ public class OrderController {
         if (idDrink == null && idFood == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-
-
         Optional<OrderProduct> existingOrder = orderService.findByBookingNumberAndIdDrinkAndIdFood(bookingNumber, idDrink, idFood);
         if (existingOrder.isPresent()) {
             orderService.deleteOrder(existingOrder.get());

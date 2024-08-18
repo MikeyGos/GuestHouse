@@ -68,9 +68,9 @@ public class DrinkController {
     public ResponseEntity<Drink> partialUpdateDrink(@PathVariable Integer idDrink, @RequestBody Drink drink) {
         return drinkService.getDrinkById(idDrink)
                 .map(avibleDrink -> {
-                    if (avibleDrink.getName() != null) avibleDrink.setName(drink.getName());
-                    if (avibleDrink.getPrice() != null) avibleDrink.setPrice(drink.getPrice());
-                    if (avibleDrink.getCapacity() != null) avibleDrink.setCapacity(drink.getCapacity());
+                    if (drink.getName() != null) avibleDrink.setName(drink.getName());
+                    if (drink.getPrice() != null) avibleDrink.setPrice(drink.getPrice());
+                    if (drink.getCapacity() != null) avibleDrink.setCapacity(drink.getCapacity());
                     return drinkService.addDrink(avibleDrink);
                 })
                 .map(ResponseEntity::ok)
