@@ -23,9 +23,9 @@ public class OrderController {
     }
 
     @GetMapping("/login")
-    public String basketBN(HttpSession session, Model model) {
+    public String basketBN(HttpSession session) {
         String bookingNumber = (String) session.getAttribute("bookingNumber");
-        model.addAttribute("bookingNumber", bookingNumber);
+        session.setAttribute("bookingNumber", bookingNumber);
         return bookingNumber;
     }
     @GetMapping("/{bookingNumber}")
@@ -33,8 +33,8 @@ public class OrderController {
         return ResponseEntity.ok(orderService.getAllProduct(bookingNumber));
     }
     @GetMapping("/orderProduct")
-    public ResponseEntity<Map<String, Object>> getAllProduct(HttpSession session, Model model) {
-        String bookingNumber = basketBN(session,model);
+    public ResponseEntity<Map<String, Object>> getAllProduct(HttpSession session) {
+        String bookingNumber = basketBN(session);
         if (bookingNumber == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
@@ -54,8 +54,8 @@ public class OrderController {
     }
 
     @PostMapping("/orderProduct")
-    public ResponseEntity<List<OrderProduct>> submitOrder(@RequestBody List<BasketItem> basket, HttpSession session, Model model) {
-        String bookingNumber = basketBN(session, model);
+    public ResponseEntity<List<OrderProduct>> submitOrder(@RequestBody List<BasketItem> basket, HttpSession session) {
+        String bookingNumber = basketBN(session);
         List<OrderProduct> orderProducts = new ArrayList<>();
 
         for (BasketItem basketItem : basket) {
@@ -84,10 +84,10 @@ public class OrderController {
     }
 
     @DeleteMapping("/orderProduct")
-    public ResponseEntity<Void> deleteProduct(HttpSession session, Model model,
+    public ResponseEntity<Void> deleteProduct(HttpSession session,
                                               @RequestParam(required = false) Integer idDrink,
                                               @RequestParam(required = false) Integer idFood) {
-        String bookingNumber = basketBN(session, model);
+        String bookingNumber = basketBN(session);
         if (bookingNumber == null || bookingNumber.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

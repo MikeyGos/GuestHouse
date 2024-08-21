@@ -26,8 +26,8 @@ private final OrderController orderController;
 
 
     @PostMapping("/paymentMethod")
-    public ResponseEntity<String> paymentMethod(@RequestBody User userPayment, HttpSession session, Model model) {
-        String bn = orderController.basketBN(session, model);
+    public ResponseEntity<String> paymentMethod(@RequestBody User userPayment, HttpSession session) {
+        String bn = orderController.basketBN(session);
 
         if (bn !=null && !bn.isEmpty()) {
             Optional<User> optionalUser = userService.findByBookingNumber(bn);

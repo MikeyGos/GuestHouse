@@ -32,8 +32,8 @@ public class RoomController {
     }
 
     @GetMapping("/login")
-    public String bookingNumberSession(HttpSession session, Model model) {
-        return orderController.basketBN(session, model);
+    public String bookingNumberSession(HttpSession session) {
+        return orderController.basketBN(session);
     }
 
     @PostMapping("/room")
