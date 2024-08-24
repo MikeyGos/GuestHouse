@@ -18,6 +18,7 @@ public class User {
     private String phoneNumber;
     private String bookingNumber;
     private Boolean payOnline;
+    private Boolean admin;
 
 
     public Integer getIdUser() {
@@ -76,12 +77,20 @@ public class User {
         this.payOnline = payOnline;
     }
 
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User user)) return false;
 
-        return Objects.equals(getIdUser(), user.getIdUser()) && Objects.equals(getName(), user.getName()) && Objects.equals(getPassword(), user.getPassword()) && Objects.equals(getLastName(), user.getLastName()) && Objects.equals(getPhoneNumber(), user.getPhoneNumber()) && Objects.equals(getBookingNumber(), user.getBookingNumber()) && Objects.equals(getPayOnline(), user.getPayOnline());
+        return Objects.equals(getIdUser(), user.getIdUser()) && Objects.equals(getName(), user.getName()) && Objects.equals(getPassword(), user.getPassword()) && Objects.equals(getLastName(), user.getLastName()) && Objects.equals(getPhoneNumber(), user.getPhoneNumber()) && Objects.equals(getBookingNumber(), user.getBookingNumber()) && Objects.equals(getPayOnline(), user.getPayOnline()) && Objects.equals(getAdmin(), user.getAdmin());
     }
 
     @Override
@@ -93,6 +102,7 @@ public class User {
         result = 31 * result + Objects.hashCode(getPhoneNumber());
         result = 31 * result + Objects.hashCode(getBookingNumber());
         result = 31 * result + Objects.hashCode(getPayOnline());
+        result = 31 * result + Objects.hashCode(getAdmin());
         return result;
     }
 }

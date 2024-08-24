@@ -15,25 +15,39 @@ public class LoginController {
     @Autowired
     public LoginController(LoginService loginService) {
         this.loginService = loginService;
-
     }
 
     @PostMapping("/login.html")
-    public String login(@RequestParam("bookingNumber") String bookingNumber, @RequestParam("password") String password, Model model, HttpSession httpSession) {
-        if (!password.isEmpty()) {
-            boolean isLogged = loginService.validateUser(bookingNumber, password);
-            if (isLogged) {
-                httpSession.setAttribute("bookingNumber", bookingNumber);
-                return "redirect:/index.html"; // must be forced to index
-
-            } else {
-                model.addAttribute("message", "Booking number or password is invalid!");
-                return "login";
-            }
+    public String login(@RequestParam("bookingNumber") String bookingNumber, @RequestParam("password") String password,
+            Model model, HttpSession session) {
+        if (password.isEmpty()) {
+            return handleRegistration(bookingNumber, model, session);
         }
-        boolean validateUserForRegister = loginService.validateUserToRegister(bookingNumber);
-        if (validateUserForRegister) {
-            httpSession.setAttribute("bookingNumber", bookingNumber);
+        return handleLogin(bookingNumber, password, model, session);
+    }
+
+    private String handleLogin(String bookingNumber, String password, Model model, HttpSession session) {
+        boolean isLogged = loginService.validateUser(bookingNumber, password);
+
+        if (isLogged) {
+            session.setAttribute("bookingNumber", bookingNumber);
+
+            if (loginService.isUserAdmin(bookingNumber)) {
+                return "redirect:/admin.html";
+            } else {
+                return "redirect:/index.html";
+            }
+        } else {
+            model.addAttribute("message", "Booking number or password is invalid!");
+            return "login";
+        }
+    }
+
+    private String handleRegistration(String bookingNumber, Model model, HttpSession session) {
+        boolean isRegistrationValid = loginService.validateUserToRegister(bookingNumber);
+
+        if (isRegistrationValid) {
+            session.setAttribute("bookingNumber", bookingNumber);
             model.addAttribute("message", "Your reservation number is correct, set a password for your account.");
             return "register";
         } else {

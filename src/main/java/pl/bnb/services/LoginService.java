@@ -41,4 +41,9 @@ public class LoginService {
         }
         return false;
     }
+    public boolean isUserAdmin(String bookingNumber) {
+        Optional<User> userOptional = loginRepository.findByBookingNumber(bookingNumber);
+        return userOptional.map(User::getAdmin).orElse(false);
+    }
+
 }
