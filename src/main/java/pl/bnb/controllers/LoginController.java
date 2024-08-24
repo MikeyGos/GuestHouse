@@ -40,8 +40,5 @@ public class LoginController {
             model.addAttribute("message", "Booking number or password is invalid!");
             return "login";
         }
-
     }
-
-
 }

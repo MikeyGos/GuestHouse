@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 @Entity
 public class Room {
@@ -22,6 +23,7 @@ public class Room {
     public Integer getIdParty() {
         return idParty;
     }
+    public void setIdParty(Integer idParty) {}
 
     public String getBookingNumber() {
         return bookingNumber;
@@ -53,5 +55,23 @@ public class Room {
 
     public void setRoomName(String roomName) {
         this.roomName = roomName;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Room room)) return false;
+
+        return Objects.equals(getIdParty(), room.getIdParty()) && Objects.equals(getBookingNumber(), room.getBookingNumber()) && Objects.equals(getDate(), room.getDate()) && Objects.equals(getTime(), room.getTime()) && Objects.equals(getRoomName(), room.getRoomName());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(getIdParty());
+        result = 31 * result + Objects.hashCode(getBookingNumber());
+        result = 31 * result + Objects.hashCode(getDate());
+        result = 31 * result + Objects.hashCode(getTime());
+        result = 31 * result + Objects.hashCode(getRoomName());
+        return result;
     }
 }

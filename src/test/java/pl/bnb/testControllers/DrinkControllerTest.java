@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(DrinkController.class)
-@AutoConfigureMockMvc(addFilters = false)               //to pass spring security error 401
+//@AutoConfigureMockMvc(addFilters = false)               //to pass spring security error 401
 public class DrinkControllerTest {
 
     @Autowired

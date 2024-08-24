@@ -35,9 +35,12 @@ private final OrderController orderController;
                User user = optionalUser.get();
                user.setPayOnline(userPayment.getPayOnline());
                userService.paymentUser(user);
+               return ResponseEntity.ok("Payment method updated successfully");
            }
-            return ResponseEntity.ok("Payment method updated successfully");
-        } else {
+           else {
+               return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+
+        }} else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }

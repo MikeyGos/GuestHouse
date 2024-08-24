@@ -6,9 +6,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import pl.bnb.entity.Room;
 import pl.bnb.services.RoomService;
 
+import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -42,8 +44,14 @@ public class RoomController {
         if (hasExistingReservation) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("You already have a reservation for this room on this date.");
         }
-        roomService.saveRoom(room);
-        return ResponseEntity.ok("Room booked successfully.");
+        Room createdroom = roomService.saveRoom(room);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{idParty}")
+                .buildAndExpand(createdroom.getIdParty())
+                .toUri();
+
+        return ResponseEntity.created(location).body("Room booked successfully.");
     }
 
     @GetMapping("/reservations")

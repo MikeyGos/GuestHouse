@@ -1,10 +1,21 @@
 package pl.bnb.services;
 
 import org.springframework.stereotype.Service;
+import pl.bnb.entity.User;
+import pl.bnb.repositories.LoginRepository;
+
+import java.util.Optional;
 
 @Service
 public class PasswordService {
+    private final LoginRepository loginRepository;
+    private final UserService userService;
     private String message = "";
+
+    public PasswordService(LoginRepository loginRepository, UserService userService) {
+        this.loginRepository = loginRepository;
+        this.userService = userService;
+    }
 
     public String getMessage() {
         return message;
@@ -44,4 +55,16 @@ public class PasswordService {
         setMessage("Password is correct, you can join to us right now.");
         return true;
     }
+    public boolean updatePassword(String bookingNumber, String newPassword) {
+        Optional<User> userOptional = userService.findByBookingNumber(bookingNumber);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            user.setPassword(newPassword);
+            userService.updateUser(user);
+            return true;
+        }
+        return false;
+    }
+
+
 }

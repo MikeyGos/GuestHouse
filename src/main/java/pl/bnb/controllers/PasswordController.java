@@ -2,6 +2,8 @@ package pl.bnb.controllers;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -14,44 +16,41 @@ import pl.bnb.services.UserService;
 import java.util.Optional;
 
 @Controller
-public class PasswordController {
+public class  PasswordController {
 
     private final PasswordService passwordService;
-    private final UserService userService;
 
     @Autowired
-    public PasswordController(PasswordService passwordService, UserService userService) {
+    public PasswordController(PasswordService passwordService) {
         this.passwordService = passwordService;
-        this.userService = userService;
     }
 
     @PostMapping("/checkPassword")
     public String bothSamePassword(@RequestParam String password, @RequestParam String samePassword, Model model, HttpSession httpSession) {
-
         boolean checkedPassword = passwordService.checkPassword(password, samePassword);
+        String message = passwordService.getMessage();
+
         if (checkedPassword) {
             httpSession.setAttribute("password", password);
-            Boolean changed = setPassword((String) httpSession.getAttribute("bookingNumber"), password);
+            boolean changed = passwordService.updatePassword((String) httpSession.getAttribute("bookingNumber"), password);
 
             if (changed) {
-                model.addAttribute("message", "Password update correctly!");
-                return "redirect:/login.html";      //needed forcing a page change
+                model.addAttribute("message", message);
+                return "redirect:/login.html";
             }
         }
-        model.addAttribute("message", "Booking number or password is invalid!");
+        model.addAttribute("message", message);
         return "register";
     }
 
-    @PatchMapping("/user")
-    private Boolean setPassword(String bookingNumber, String password) {
-        Optional<User> user = userService.findByBookingNumber(bookingNumber);
-        if (user.isPresent()) {
-            User u1 = user.get();
-            u1.setPassword(password);
-            userService.updateUser(u1);
-            return true;
+    @PatchMapping("/password")
+    public ResponseEntity<String> setPassword(@RequestParam String bookingNumber, @RequestParam String password) {
+        boolean updated = passwordService.updatePassword(bookingNumber, password);
+        if (updated) {
+            return ResponseEntity.ok("Password updated successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found.");
         }
-        return false;
     }
 
 }
