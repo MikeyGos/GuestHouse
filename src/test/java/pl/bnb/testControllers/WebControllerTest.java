@@ -127,4 +127,10 @@ public class WebControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("roomList"));
     }
+    @Test
+    public void testAdmin()throws Exception{
+        mockMvc.perform(get("/admin.html"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("admin"));
+    }
 }

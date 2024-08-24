@@ -58,25 +58,13 @@ function submitQuantities() {
             const name = foodRow.querySelector('td:nth-child(1)').textContent;
             const price = parseFloat(foodRow.querySelector('td:nth-child(2)').textContent);
             const totalPrice = (price * quantity).toFixed(2);
-            basket.push({ idFood, nameBasketProduct :name, qtyBasketProduct :quantity, totalPrice }); // changes name for js.
+            basket.push({idFood, nameBasketProduct: name, qtyBasketProduct: quantity, totalPrice}); // changes name for js.
         }
     });
 
     localStorage.setItem('basket', JSON.stringify(basket));
 
-    fetch('/basket', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(basket)
-    })
-        .then(response => response.json())
-        .then(responseText => {
-            console.log(responseText);
-            window.location.href = '/basket.html';
-        })
-        .catch(error => console.error('Error submitting quantities:', error));
+    // Opcjonalnie przekieruj użytkownika
+    window.location.href = '/basket.html';
 }
-
 fetchSortedFoods();

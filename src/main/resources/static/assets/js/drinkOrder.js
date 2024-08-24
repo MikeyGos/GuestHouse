@@ -1,4 +1,3 @@
-// Fetch sorted drinks and save to localStorage
 async function fetchSortedDrinks(searchInput = '') {
     let url = '/sortedDrinks';
     if (searchInput) {
@@ -64,21 +63,14 @@ function submitQuantities() {
 
     localStorage.setItem('basket', JSON.stringify(basket));
 
-    fetch('/basket', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(basket)
-    })
-        .then(response => response.json())
-        .then(responseText => {
-            console.log(responseText);
-            window.location.href = '/basket.html';
-        })
-        .catch(error => {
-            console.error('Error submitting quantities:', error);
-        });
+    // Opcjonalnie przekieruj użytkownika
+    window.location.href = '/basket.html';
+}
+const bookingNumber = localStorage.getItem('bookingNumber');
+if (bookingNumber) {
+    console.log(`Booking Number: ${bookingNumber}`);
+} else {
+    console.log('No booking number found.');
 }
 
 fetchSortedDrinks();

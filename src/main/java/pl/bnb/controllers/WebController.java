@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController {
 
     @GetMapping("index.html")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @GetMapping("about.html")
-    public String about(){
+    public String about() {
         return "about";
     }
 
     @GetMapping("reservation.html")
-    public String reservation(){
+    public String reservation() {
         return "reservation";
     }
 
     @GetMapping("products.html")
-    public String products(){
+    public String products() {
         return "products";
     }
 
@@ -32,7 +32,7 @@ public class WebController {
     }
 
     @GetMapping("login.html")
-    public String login(){
+    public String login() {
         return "login";
     }
 
@@ -62,18 +62,59 @@ public class WebController {
     }
 
     @GetMapping("snacks.html")
-    public String snacks() {return "snacks";}
+    public String snacks() {
+        return "snacks";
+    }
 
     @GetMapping("userbasket.html")
-    public String userBasket(){return "userbasket";}
+    public String userBasket() {
+        return "userbasket";
+    }
 
     @GetMapping("payment.html")
-    public String payment(){return "payment";}
+    public String payment() {
+        return "payment";
+    }
 
     @GetMapping("room.html")
-    public String partyRoom(){return "room";}
+    public String partyRoom() {
+        return "room";
+    }
 
     @GetMapping("roomList.html")
-    public String roomList(){return "roomList";}
+    public String roomList() {
+        return "roomList";
+    }
+
+    @GetMapping("admin.html")
+    public String admin() {
+        return "admin";
+    }
+
+    @GetMapping("searchRoom.html")
+    public String searchRoom() {
+        return "searchRoom";
+    }
+
+    @GetMapping("searchOrder.html")
+    public String searchOrder() {
+        return "searchOrder";
+    }
+
+    @GetMapping("addFood.html")
+    public String addFood() {
+        return "addFood";
+    }
+
+    @GetMapping("addDrink.html")
+    public String addDrink() {
+        return "addDrink";
+    }
+
+    @GetMapping("searchFullOrder.html")
+    public String searchFullOrder() {
+        return "searchFullOrder";
+    }
+
 }
 
