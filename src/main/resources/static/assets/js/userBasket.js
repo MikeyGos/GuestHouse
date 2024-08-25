@@ -83,5 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${price} €`;
     }
 
+    setInterval(fetchProducts, 10000);
+
     fetchProducts();
 });
