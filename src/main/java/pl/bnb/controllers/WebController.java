@@ -100,7 +100,6 @@ public class WebController {
     public String searchOrder() {
         return "searchOrder";
     }
-
     @GetMapping("addFood.html")
     public String addFood() {
         return "addFood";
@@ -111,9 +110,9 @@ public class WebController {
         return "addDrink";
     }
 
-    @GetMapping("searchFullOrder.html")
+    @GetMapping("fullBookingList.html")
     public String searchFullOrder() {
-        return "searchFullOrder";
+        return "fullBookingList";
     }
 
 }

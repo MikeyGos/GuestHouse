@@ -133,4 +133,22 @@ public class WebControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("admin"));
     }
+    @Test
+    public void testFullBookingList()throws Exception{
+        mockMvc.perform(get("/fullBookingList.html"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("fullBookingList"));
+    }
+    @Test
+    public void testSearchOrder() throws Exception{
+        mockMvc.perform(get("/searchOrder.html"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("searchOrder"));
+    }
+    @Test
+    public void testSearchRoom() throws Exception{
+        mockMvc.perform(get("/searchRoom.html"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("searchRoom"));
+    }
 }

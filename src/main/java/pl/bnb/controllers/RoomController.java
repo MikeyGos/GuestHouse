@@ -42,7 +42,7 @@ public class RoomController {
     public ResponseEntity<String> createRoom(@RequestBody Room room) {
         boolean hasExistingReservation = roomService.hasExistingReservation(room.getBookingNumber(), room.getDate(), room.getRoomName());
         if (hasExistingReservation) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("You already have a reservation for this room on this date.");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("You already have a reservation for this room on this date");
         }
         Room createdroom = roomService.saveRoom(room);
 
