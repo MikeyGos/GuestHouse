@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(user => {
                 alert('User added successfully!');
-                fetchUsers(); // Odśwież listę użytkowników po dodaniu nowego
+                fetchUsers();
             })
             .catch(error => {
                 console.error('Error adding user:', error);
@@ -54,13 +54,13 @@ function fetchUsers() {
         });
 }
 
-// Funkcja wyświetlająca użytkowników w tabeli
+
 function displayUsers(users) {
     const userTableBody = document.getElementById('userTableBody');
-    userTableBody.innerHTML = ''; // Czyszczenie zawartości tabeli
+    userTableBody.innerHTML = '';
 
     users
-        .filter(user => user.bookingNumber !== 'RodAdmin') // Filtruj użytkowników
+        .filter(user => user.bookingNumber !== 'Admin')
         .forEach(user => {
             const row = document.createElement('tr');
 
@@ -79,25 +79,21 @@ function displayUsers(users) {
         });
 }
 
-// Funkcja wypełniająca formularz edycji danymi użytkownika
 function populateEditForm(idUser, bookingNumber, name, lastName, phoneNumber) {
     document.getElementById('editBookingNumber').value = bookingNumber;
     document.getElementById('editName').value = name;
     document.getElementById('editLastName').value = lastName;
     document.getElementById('editPhoneNumber').value = phoneNumber;
 
-    // Upewnij się, że formularz edycji jest widoczny
     document.getElementById('editUserForm').style.display = 'block';
 
-    // Dodaj event listener do formularza edycji
     const editUserForm = document.getElementById('editUserForm');
     editUserForm.onsubmit = function (event) {
         event.preventDefault();
-        updateUser(idUser); // Wywołanie funkcji aktualizującej użytkownika
+        updateUser(idUser);
     };
 }
 
-// Funkcja aktualizująca użytkownika
 function updateUser(idUser) {
     const updatedUser = {
         bookingNumber: document.getElementById('editBookingNumber').value,
@@ -121,7 +117,7 @@ function updateUser(idUser) {
         })
         .then(user => {
             alert('User updated successfully!');
-            fetchUsers(); // Odśwież listę użytkowników po edycji
+            fetchUsers();
         })
         .catch(error => {
             console.error('Error updating user:', error);
@@ -129,7 +125,6 @@ function updateUser(idUser) {
         });
 }
 
-// Funkcja usuwająca użytkownika
 function deleteUser(idUser) {
     if (!confirm('Are you sure you want to delete this user?')) return;
 
@@ -144,7 +139,7 @@ function deleteUser(idUser) {
                 throw new Error('Network response was not ok');
             }
             alert('User deleted successfully!');
-            fetchUsers(); // Odśwież listę użytkowników po usunięciu
+            fetchUsers();
         })
         .catch(error => {
             console.error('Error deleting user:', error);
