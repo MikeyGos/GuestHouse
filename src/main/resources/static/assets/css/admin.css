@@ -14,3 +14,19 @@ h2 {
     font-size: 1.5em;
     margin-top: 30px;
 }
+#navbarNav.collapsing,
+#navbarNav.collapse {
+    display: none;
+}
+
+.navbar-toggler {
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    #navbarNav {
+        display: flex !important;
+        background-color: transparent;
+    }
+}
