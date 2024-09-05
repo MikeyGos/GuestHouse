@@ -34,7 +34,7 @@ Frontend
 
  - Bootstrap studio
  - Thymeleaf
-
+ - I use OpenAI to help me create JavaScript. I've just started learning JavaScript
 ## Sign in
 Administration:
 
