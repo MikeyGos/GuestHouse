@@ -45,5 +45,5 @@ Client version:
  - Booking number - 100
 Password - the first time you try to log in with this number you will be able to set a password
 
-Ability to create and delete accounts after logging in to the admin account.
+Possibility to create and delete accounts after logging in to the admin account.
 
