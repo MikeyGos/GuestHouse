@@ -7,7 +7,9 @@ The purpose of the website is to enable hotel guests to make reservations and or
 The application has been launched and is successfully used on a daily basis at Aisling Guest House. The project is constantly being modified.
 ## Test Website
 For testing purposes, the version can be checked at:
-https://aguesthouse-9948086a81e7.herokuapp.com/login.html
+
+https://aguesthouse-9948086a81e7.herokuapp.com
+
 Possibility to log in to the administration and client versions
 
 ## Tech/framework used
