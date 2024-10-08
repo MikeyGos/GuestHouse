@@ -34,9 +34,10 @@ Testing Framework
 
 Frontend
 
- - Bootstrap studio
+ - HTML
+ - CSS
  - Thymeleaf
- - I use OpenAI to help me create JavaScript. I've just started learning JavaScript
+ - JavaScript
 ## Sign in
 Administration:
 
